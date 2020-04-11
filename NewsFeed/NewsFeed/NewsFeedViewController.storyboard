@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="PLk-hW-hyq">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--News Feed View Controller-->
+        <scene sceneID="01j-6P-VcW">
+            <objects>
+                <viewController id="PLk-hW-hyq" customClass="NewsFeedViewController" customModule="NewsFeed" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="CBc-nV-kx0">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A5q-4X-oAc" customClass="GradientView" customModule="NewsFeed" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                                <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="startColor">
+                                        <color key="value" red="0.93032361682832554" green="0.89781882694356863" blue="0.66317683230899827" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="endColor">
+                                        <color key="value" red="0.93032361682832554" green="0.62107936371249939" blue="0.9032372061993188" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="pVT-Ya-C3W">
+                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="PLk-hW-hyq" id="qJ7-UL-Era"/>
+                                    <outlet property="delegate" destination="PLk-hW-hyq" id="EoM-kW-GTu"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="A5q-4X-oAc" secondAttribute="bottom" id="EjV-av-zT0"/>
+                            <constraint firstItem="9yh-SM-TuH" firstAttribute="trailing" secondItem="pVT-Ya-C3W" secondAttribute="trailing" id="H07-X2-ae5"/>
+                            <constraint firstItem="pVT-Ya-C3W" firstAttribute="top" secondItem="9yh-SM-TuH" secondAttribute="top" id="MF9-MJ-BPI"/>
+                            <constraint firstItem="A5q-4X-oAc" firstAttribute="top" secondItem="9yh-SM-TuH" secondAttribute="top" id="Nfe-uT-F9I"/>
+                            <constraint firstItem="A5q-4X-oAc" firstAttribute="leading" secondItem="9yh-SM-TuH" secondAttribute="leading" id="X1q-sR-gK8"/>
+                            <constraint firstItem="pVT-Ya-C3W" firstAttribute="leading" secondItem="9yh-SM-TuH" secondAttribute="leading" id="bt3-yi-BzM"/>
+                            <constraint firstItem="pVT-Ya-C3W" firstAttribute="bottom" secondItem="9yh-SM-TuH" secondAttribute="bottom" constant="34" id="cpl-vp-Fw1"/>
+                            <constraint firstItem="A5q-4X-oAc" firstAttribute="trailing" secondItem="9yh-SM-TuH" secondAttribute="trailing" id="l0Z-CP-NJz"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="9yh-SM-TuH"/>
+                    </view>
+                    <connections>
+                        <outlet property="table" destination="pVT-Ya-C3W" id="O7Q-ab-uAo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Kkl-9R-Kbt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-362.31884057971018" y="71.651785714285708"/>
+        </scene>
+    </scenes>
+</document>
